@@ -21,23 +21,28 @@ function handleTaskCompletion(
   let assignNumber = getIdStingToNumber(taskAssignedId);
   let taskCount = getIdStingToNumber(taskCountId);
 
-  // Task সংখ্যা আপডেট
+  // update task count
   document.getElementById(taskCountId).innerText = taskCount + 1;
-  document.getElementById(taskAssignedId).innerText = assignNumber - 1;
+  let totolTask = (document.getElementById(taskAssignedId).innerText =
+    assignNumber - 1);
 
-  // বাটন ডিজেবল করা
+  // button disabled
   let btn = document.getElementById(taskBtnId);
   btn.setAttribute("disabled", true);
   btn.style.opacity = "0.6";
 
-  // Log Message তৈরি করা
+  // activity log
   let mbisutext = document.getElementById(textContainerId).innerText;
   let pera = document.createElement("p");
-  pera.innerText = "completed task " + mbisutext+ " "+ getCurrentTime();
+  pera.innerText = "You have completed the task " + mbisutext + " " + getCurrentTime();
   pera.classList.add("activity-log");
 
   document.getElementById(logContainerId).appendChild(pera);
-  alert("Completed task " + mbisutext);
+  alert("Board update successfull " + mbisutext);
+
+  if (totolTask === 0) {
+    alert("Congratulation!! You have completed all the current task");
+  }
 }
 
 function updateDate() {
@@ -48,12 +53,17 @@ function updateDate() {
   const day = today.getDate();
   const year = today.getFullYear();
   document.getElementById("weekly-name").innerText = dayName;
-  document.getElementById("date").innerText = monthName+" " + day +" " + year;
+  document.getElementById("date").innerText =
+    monthName + " " + day + " " + year;
 }
 updateDate();
 
 function getCurrentTime() {
   const now = new Date();
-  return now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+  return now.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  });
 }
-

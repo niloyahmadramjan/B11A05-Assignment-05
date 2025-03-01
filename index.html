@@ -1,134 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevBoard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .activity-log{
-            background: #f3f4f6;
-            padding: 10px;
-            border-radius: 10px; 
-        }
+      .activity-log {
+        background: #f3f4f6;
+        padding: 10px;
+        border-radius: 10px;
+      }
     </style>
-</head>
-<body class="p-5" id="bg-color">
-
+  </head>
+  <body class="p-5" id="bg-color">
     <!-- Dashboard Container -->
     <div class="max-w-6xl mx-auto">
-
-        <!-- Header -->
-        <header class=" flex justify-between items-center pb-4  bg-white shadow-lg rounded-lg p-5 mt-6">
-            <h1 class="text-2xl font-bold text-gray-700">Dev<span class="text-blue-500">Board</span></h1>
-            <div class="flex items-center space-x-4 ">
-                <div class="checkBox-count flex items-center space-x-4 bg-[#F4F7FF]  rounded-full py-2 px-5">
-                <img class="w-7 h-7" src="./assets/img/checkbox.png" alt="">
-                <span id="taskCount" class=" text-black px-3 py-1  font-extrabold">23</span>
-                </div>
-                <img id="theme-btn" class="w-8 h-8 rounded-full cursor-pointer" src="./assets/img/theme-btn.png" alt="">
-            </div>
-        </header>
-        <div class="banner-left-right grid grid-cols-12 gap-8">
-            <div class="top-section-Task-cards-wrapper col-span-9 bg-white  shadow-lg rounded-lg p-5 mt-6">
-                <!-- Top Section -->
-           <section class="grid grid-cols-12 gap-4 mt-5">
-               <div class="bg-blue-100 col-span-3 p-5 rounded-lg text-center">
-                   <h3 class="text-lg font-semibold text-gray-700">Task Assigned</h3>
-                   <span id="task-assigned" class="text-3xl font-bold text-blue-500">6</span>
-               </div>
-               <div class=" flex justify-center gap-3 items-center bg-gradient-to-r col-span-6 to-blue-400 from-indigo-500">
-                   <img class="w-16 pl-2" src="./assets/img/board.png" alt="">
-                   <a href="ques&ans.html" class="p-5 rounded-lg text-left text-white text-lg font-semibold">Discover Something New Today!</a>
-               </div>
-               <div class="bg-gray-100 col-span-3 p-1 rounded-lg shadow-md grid grid-cols-12 items-center">
-                
-                <div class="bg-[#eeecec] p-3 rounded-full col-span-4 flex justify-center">
-                    <img class="w-7 h-7" src="./assets/img/calender.png" alt="Calendar">
-                </div>
-        
-                <div class="col-span-8 p-1 ">
-                    <span id="weekly-name" class="text-gray-700 font-bold text-md"></span>,
-                    <br>
-                    <span id="date" class="text-gray-900 font-semibold text-lg"></span>
-                </div>
-            </div>
-           </section>
-   
-           <!-- Task Cards -->
-           <section class=" grid grid-cols-3 gap-4 mt-5">
-               <div class="bg-gray-50 p-5 rounded-lg shadow">
-                   <h4 class="text-sm font-semibold text-gray-500">Shop Ease</h4>
-                   <h3 id="mobile-btn-issu-text" class="text-lg font-bold text-gray-800">Fix Mobile Button Issue</h3>
-                   <p class="text-sm text-gray-500 mt-2">A card component has a figure, body, title, and actions.</p>
-                   <div class="flex justify-between items-center mt-4">
-                       <span class="text-sm text-gray-600">Deadline: 21 March 2025</span>
-                       <button id="mobile-btn-issu"  class="bg-blue-500 text-white px-3 py-1 text-sm rounded">Completed</button>
-                   </div>
-               </div>
-   
-               <div class="bg-gray-50 p-5 rounded-lg shadow">
-                   <h4 class="text-sm font-semibold text-gray-500">Soft Pay</h4>
-                   <h3 id="pay-btn-text" class="text-lg font-bold text-gray-800">Add Pay Success Modal</h3>
-                   <p class="text-sm text-gray-500 mt-2">A card component has a figure, body, title, and actions.</p>
-                   <div class="flex justify-between items-center mt-4">
-                       <span class="text-sm text-gray-600">Deadline: 25 March 2025</span>
-                       <button id="pay-btn" class="bg-blue-500 text-white px-3 py-1 text-sm rounded">Completed</button>
-                   </div>
-               </div>
-   
-               <div class="bg-gray-50 p-5 rounded-lg shadow">
-                   <h4 class="text-sm font-semibold text-gray-500">Meta</h4>
-                   <h3 id="rection-text" class="text-lg font-bold text-gray-800">Add New Reaction 🙌</h3>
-                   <p class="text-sm text-gray-500 mt-2">A card component has a figure, body, title, and actions.</p>
-                   <div class="flex justify-between items-center mt-4">
-                       <span class="text-sm text-gray-600">Deadline: 31 March 2025</span>
-                       <button id="rection-btn" class="bg-blue-500 text-white px-3 py-1 text-sm rounded">Completed</button>
-                   </div>
-               </div>
-   
-               <div class="bg-gray-50 p-5 rounded-lg shadow">
-                   <h4 class="text-sm font-semibold text-gray-500">Programming Hero</h4>
-                   <h3 id="video-issu-text" class="text-lg font-bold text-gray-800">Fix Video Loading Issue</h3>
-                   <p class="text-sm text-gray-500 mt-2">A card component has a figure, body, title, and actions.</p>
-                   <div class="flex justify-between items-center mt-4">
-                       <span class="text-sm text-gray-600">Deadline: 21 March 2025</span>
-                       <button id="video-issu-btn" class="bg-blue-500 text-white px-3 py-1 text-sm rounded">Completed</button>
-                   </div>
-               </div>
-   
-               <div class="bg-gray-50 p-5 rounded-lg shadow">
-                   <h4 class="text-sm font-semibold text-gray-500">Google LLC</h4>
-                   <h3 id="ai-search-text" class="text-lg font-bold text-gray-800">Integrate AI Search</h3>
-                   <p class="text-sm text-gray-500 mt-2">A card component has a figure, body, title, and actions.</p>
-                   <div class="flex justify-between items-center mt-4">
-                       <span class="text-sm text-gray-600">Deadline: 31 March 2025</span>
-                       <button id="ai-search-btn" class="bg-blue-500 text-white px-3 py-1 text-sm rounded">Completed</button>
-                   </div>
-               </div>
-   
-               <div class="bg-gray-50 p-5 rounded-lg shadow">
-                   <h4 class="text-sm font-semibold text-gray-500">Polygon Tech</h4>
-                   <h3 id="probasi-text" class="text-lg font-bold text-gray-800">Review Ami Probashi Site</h3>
-                   <p class="text-sm text-gray-500 mt-2">A card component has a figure, body, title, and actions.</p>
-                   <div class="flex justify-between items-center mt-4">
-                       <span class="text-sm text-gray-600">Deadline: 5 May 2025</span>
-                       <button id="probasi-btn" class="bg-blue-500 text-white px-3 py-1 text-sm rounded">Completed</button>
-                   </div>
-               </div>
-           </section>
-           </div>
-           <!-- Activity Log -->
-           <section id="activity-log" class=" col-span-3 mt-2 bg-gray-50  rounded-lg shadow space-y-3">
-               <h3 class="text-lg font-bold text-center text-gray-800">Activity Log</h3>
-               <button class="bg-blue-500 text-center w-full text-white px-4 py-2 mt-3 rounded">Clear History</button>
-               
-           </section>
+      <!-- Header -->
+      <header
+        class="flex justify-between items-center pb-4 bg-white shadow-lg rounded-lg p-5 mt-6"
+      >
+        <h1 class="text-2xl font-bold text-gray-700">
+          Dev<span class="text-blue-500">Board</span>
+        </h1>
+        <div class="flex items-center space-x-4">
+          <div
+            class="checkBox-count flex items-center space-x-4 bg-[#F4F7FF] rounded-full py-2 px-5"
+          >
+            <img class="w-7 h-7" src="./assets/img/checkbox.png" alt="" />
+            <span id="taskCount" class="text-black px-3 py-1 font-extrabold"
+              >23</span
+            >
+          </div>
+          <img
+            id="theme-btn"
+            class="w-8 h-8 rounded-full cursor-pointer"
+            src="./assets/img/theme-btn.png"
+            alt=""
+          />
         </div>
+      </header>
+      <div class="banner-left-right grid grid-cols-12 gap-8">
+        <div
+          class="top-section-Task-cards-wrapper col-span-9 bg-white shadow-lg rounded-lg p-5 mt-6"
+        >
+          <!-- Top Section -->
+          <section class="grid grid-cols-12 gap-4 mt-5">
+            <div class="bg-blue-100 col-span-3 p-5 rounded-lg text-center">
+              <h3 class="text-lg font-semibold text-gray-700">Task Assigned</h3>
+              <span id="task-assigned" class="text-3xl font-bold text-blue-500"
+                >6</span
+              >
+            </div>
+            <div
+              class="flex justify-center gap-3 items-center bg-gradient-to-r col-span-6 to-blue-400 from-indigo-500"
+            >
+              <img class="w-16 pl-2" src="./assets/img/board.png" alt="" />
+              <a
+                href="Blog.html"
+                class="p-5 rounded-lg text-left text-white text-lg font-semibold"
+                >Discover Something New Today!</a
+              >
+            </div>
+            <div
+              class="bg-gray-100 col-span-3 p-1 rounded-lg shadow-md grid grid-cols-12 items-center"
+            >
+              <div
+                class="bg-[#eeecec] p-3 rounded-full col-span-4 flex justify-center"
+              >
+                <img
+                  class="w-7 h-7"
+                  src="./assets/img/calender.png"
+                  alt="Calendar"
+                />
+              </div>
 
+              <div class="col-span-8 p-1">
+                <span
+                  id="weekly-name"
+                  class="text-gray-700 font-bold text-md"
+                ></span
+                >,
+                <br />
+                <span
+                  id="date"
+                  class="text-gray-900 font-semibold text-lg"
+                ></span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Task Cards -->
+          <section id="task-list" class="grid grid-cols-3 gap-4 mt-5">
+            <div class="task bg-gray-50 p-5 rounded-lg shadow">
+              <span
+                class="text-sm text-gray-500 bg-blue-100 rounded-full p-2"
+                >Shop Ease</span
+              >
+              <h3
+                id="mobile-btn-issu-text"
+                class="text-lg font-bold text-gray-800 mt-2"
+              >
+                Fix Mobile Button Issue
+              </h3>
+              <p class="text-sm text-gray-500 mt-2 bg-white p-2">
+                A card component has a figure, body, title, and actions.
+              </p>
+              <div class="flex justify-between items-center mt-4">
+                <span class="text-sm text-gray-600"
+                  >Deadline: 21 March 2025</span
+                >
+                <button
+                  id="mobile-btn-issu"
+                  class="bg-blue-500 text-white px-3 py-1 text-sm rounded"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+
+            <div class="task bg-gray-50 p-5 rounded-lg shadow">
+              <span class="text-sm text-gray-500 bg-blue-100 rounded-full p-2">Soft Pay</span>
+              <h3 id="pay-btn-text" class="text-lg font-bold text-gray-800 mt-2">
+                Add Pay Success Modal
+              </h3>
+              <p class="text-sm text-gray-500 mt-2 bg-white p-2">
+                A card component has a figure, body, title, and actions.
+              </p>
+              <div class="flex justify-between items-center mt-4">
+                <span class="text-sm text-gray-600"
+                  >Deadline: 25 March 2025</span
+                >
+                <button
+                  id="pay-btn"
+                  class="bg-blue-500 text-white px-3 py-1 text-sm rounded"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+
+            <div class="task bg-gray-50 p-5 rounded-lg shadow">
+              <span class="text-sm text-gray-500 bg-blue-100 rounded-full p-2">Meta</span>
+              <h3 id="rection-text" class="text-lg font-bold text-gray-800 mt-2">
+                Add New Reaction 🙌
+              </h3>
+              <p class="text-sm text-gray-500 mt-2 bg-white p-2">
+                A card component has a figure, body, title, and actions.
+              </p>
+              <div class="flex justify-between items-center mt-4">
+                <span class="text-sm text-gray-600"
+                  >Deadline: 31 March 2025</span
+                >
+                <button
+                  id="rection-btn"
+                  class="bg-blue-500 text-white px-3 py-1 text-sm rounded"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+
+            <div class="task bg-gray-50 p-5 rounded-lg shadow">
+              <span class="text-sm text-gray-500 bg-blue-100 rounded-full p-2"> Programming Hero</span>
+              <h3 id="video-issu-text" class="text-lg font-bold text-gray-800 mt-2">
+                Fix Video Loading Issue
+              </h3>
+              <p class="text-sm text-gray-500 mt-2 bg-white p-2">
+                A card component has a figure, body, title, and actions.
+              </p>
+              <div class="flex justify-between items-center mt-4">
+                <span class="text-sm text-gray-600"
+                  >Deadline: 21 March 2025</span
+                >
+                <button
+                  id="video-issu-btn"
+                  class="bg-blue-500 text-white px-3 py-1 text-sm rounded"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+
+            <div class="task bg-gray-50 p-5 rounded-lg shadow">
+              <span class="text-sm text-gray-500 bg-blue-100 rounded-full p-2">Google LLC</span>
+              <h3 id="ai-search-text" class="text-lg font-bold text-gray-800 mt-2">
+                Integrate AI Search
+              </h3>
+              <p class="text-sm text-gray-500 mt-2 bg-white p-2">
+                A card component has a figure, body, title, and actions.
+              </p>
+              <div class="flex justify-between items-center mt-4">
+                <span class="text-sm text-gray-600"
+                  >Deadline: 31 March 2025</span
+                >
+                <button
+                  id="ai-search-btn"
+                  class="bg-blue-500 text-white px-3 py-1 text-sm rounded"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+
+            <div class="task bg-gray-50 p-5 rounded-lg shadow">
+                <span class="text-sm text-gray-500 bg-blue-100 rounded-full p-2">Polygon Tech</span>
+              <h3 id="probasi-text" class="text-lg font-bold text-gray-800 mt-2">
+                Review Ami Probashi Site
+              </h3>
+              <p class="text-sm text-gray-500 mt-2 bg-white p-2">
+                A card component has a figure, body, title, and actions.
+              </p>
+              <div class="flex justify-between items-center mt-4">
+                <span class="text-sm text-gray-600">Deadline: 5 May 2025</span>
+                <button
+                  id="probasi-btn"
+                  class="bg-blue-500 text-white px-3 py-1 text-sm rounded"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- Activity Log -->
+        <section class="col-span-3 mt-6  bg-gray-50 rounded-lg shadow space-y-3">
+          <h3 class="text-lg font-bold text-center text-gray-800">
+            Activity Log
+          </h3>
+          <button
+            id="clear-history"
+            class="bg-blue-500 text-center w-full text-white px-4 py-2 mt-3 rounded"
+          >
+            Clear History
+          </button>
+          <div id="activity-log"></div>
+        </section>
+      </div>
     </div>
 
     <script src="./assets/javascripts/utility.js"></script>
     <script src="./assets/javascripts/app.js"></script>
-</body>
+  </body>
 </html>
