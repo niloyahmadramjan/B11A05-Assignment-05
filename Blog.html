@@ -29,18 +29,62 @@
   </header>
     <div class="collapse collapse-arrow bg-base-100 border border-base-300">
         <input type="radio" name="my-accordion-2" checked="checked" />
-        <div class="collapse-title font-semibold">How do I create an account?</div>
-        <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+        <div class="collapse-title font-semibold">What are the different ways to select an element in the DOM?</div>
+        <div class="collapse-content text-sm space-y-3">
+            <h2 class="font-bold text-sm">Here are the different ways to select elements in the DOM</h2>
+            <p>ID select : document.getElementById("myId") => Return a single elemen</p>
+            <p>Class Name select : document.getElementsByClassName("myClass") => it will Returns an HTMLCollection </p>
+            <p>Tag Name select : document.getElementsByTagName("p") => it will Returns an HTMLCollection</p>
+            <p>CSS selector first match : document.querySelector(".myClass") => it will return first match.</p>
+            <p>CSS selector all match : document.querySelector(".myClass") => it will return NodeList.</p>
+        </div>
       </div>
       <div class="collapse collapse-arrow bg-base-100 border border-base-300">
         <input type="radio" name="my-accordion-2" />
-        <div class="collapse-title font-semibold">I forgot my password. What should I do?</div>
-        <div class="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the instructions sent to your email.</div>
+        <div class="collapse-title font-semibold">What is the difference between innerHTML, innerText, and textContent ?</div>
+        <div class="collapse-content text-sm space-y-3 ">
+          <h2 class="font-bold">Here is the difference between innerHTML, innerText, and textContent.</h2>
+          <p>innerHTML - Returns or sets  HTML content, parses HTML tags </p>
+          <p>innerText - Returns or sets only visible text, ignores hidden text, does not parse HTML.</p>
+          <p>textContent - Returns or sets all text (including hidden), does not parse HTML, fastest method. </p>
+        </div>
       </div>
       <div class="collapse collapse-arrow bg-base-100 border border-base-300">
         <input type="radio" name="my-accordion-2" />
-        <div class="collapse-title font-semibold">How do I update my profile information?</div>
-        <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
+        <div class="collapse-title font-semibold">What is event delegation in the DOM?</div>
+        <div class="collapse-content text-sm space-y-3 ">
+          <h2 class="font-bold">Event Delegation is a technique in the DOM where a parent element handles events for its child elements, <br> even if they are added dynamically.</h2>
+          <p>It working instead of adding event listeners to multiple child elements, you attach a single event listener to their parent <br> and use event bubbling to detect the target.</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title font-semibold">What is event bubbling in the DOM?</div>
+        <div class="collapse-content text-sm space-y-3 ">
+          <h2>Event Bubbling is a DOM event propagation mechanism where an event starts from the target element and moves <br> upward through its parent elements until it reaches the root (document).</h2>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title font-semibold">What is the difference between innerHTML, innerText, and textContent ?</div>
+        <div class="collapse-content text-sm space-y-3 ">
+          <h2>What is the difference between innerHTML, innerText, and textContent. </h2>
+          <h2 class="font-bold">
+            // create an Element  
+            <br>
+            let titleDemo = document.createElement("p"); <br>
+            titleDemo.innerText = "Hello programming heros"; <br> <br>
+            
+            // Add an Element 
+            <br>
+            let title = document.getElementById("title"); <br>
+            title.appendChild(titleDemo);<br> <br>
+            <br>
+            // Remove an Element 
+            <br>
+            titleDemo.remove();</h2>
+          
+        </div>
       </div>
     </div>>
 </div>

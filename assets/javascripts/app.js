@@ -74,3 +74,8 @@ document.getElementById("probasi-btn").addEventListener("click", function () {
 document.getElementById("clear-history").addEventListener("click", function() {
     document.getElementById("activity-log").innerHTML = "";
 });
+
+
+
+
+
